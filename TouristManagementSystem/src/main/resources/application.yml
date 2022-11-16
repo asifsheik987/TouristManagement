@@ -13,6 +13,9 @@ spring:
         
   mvc:
     view:
-      prefix: webapp/WEB-INF/jsp/
+      prefix: /WEB-INF/jsp/
       suffix: .jsp
+  
+server:
+  port : 9001
 

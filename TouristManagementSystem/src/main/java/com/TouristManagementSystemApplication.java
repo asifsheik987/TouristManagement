@@ -18,7 +18,7 @@ import com.service.TouristService;
 public class TouristManagementSystemApplication {
 
 	public static void main(String[] args) {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(TouristManagementSystemApplication.class, args);
+        SpringApplication.run(TouristManagementSystemApplication.class, args);
 		
 //		TouristMaster tourist = new TouristMaster();
 //		tourist.setName("akhil");
@@ -32,20 +32,20 @@ public class TouristManagementSystemApplication {
 //		tourist.addPhone(contact1);
 //		tourist.addPhone(contact2);
 		
-		TouristService tService = applicationContext.getBean("service",TouristService.class);
-		
-		 Optional<TouristMaster> tourist = tService.display(3);
-		 if(tourist.isPresent()) {
-			 TouristMaster tourist1 = tourist.get();
-			 
-			 tourist1.getContacts().stream()
-			                       .filter(t->!t.getPhoneNumber().equals("0"))
-			                       .forEach(System.out::println);
-			 
-		 }
-		 else {
-			 System.out.println("notfound");
-		 }
+//		TouristService tService = applicationContext.getBean("service",TouristService.class);
+//		
+//		 Optional<TouristMaster> tourist = tService.display(3);
+//		 if(tourist.isPresent()) {
+//			 TouristMaster tourist1 = tourist.get();
+//			 
+//			 tourist1.getContacts().stream()
+//			                       .filter(t->!t.getPhoneNumber().equals("0"))
+//			                       .forEach(System.out::println);
+//			 
+//		 }
+//		 else {
+//			 System.out.println("notfound");
+//		 }
 	}
 
 }
