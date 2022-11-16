@@ -8,6 +8,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,7 +32,7 @@ public class TouristMaster {
 	@Column(name="Booking_Amount")
 	private float bookingAmount;
 	
-	@OneToMany(mappedBy = "tourist", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "tourist",fetch = FetchType.EAGER,cascade = CascadeType.ALL, orphanRemoval = true)
 //	@JoinColumn(name = "tourist_id")
 	private List<TouristContact> contacts = new ArrayList<>();
 	
@@ -89,13 +90,11 @@ public class TouristMaster {
 	public void setBookingAmount(float bookingAmount) {
 		this.bookingAmount = bookingAmount;
 	}
+
 	@Override
 	public String toString() {
 		return "TouristMaster [id=" + id + ", name=" + name + ", address=" + address + ", date=" + date
-				+ ", bookingAmount=" + bookingAmount + "]";
+				+ ", bookingAmount=" + bookingAmount + ", contacts=" + contacts + "]";
 	}
 	
-	
-	
-
 }

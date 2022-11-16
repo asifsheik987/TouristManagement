@@ -15,7 +15,7 @@ public class TouristContact {
 	@Column(name = "Phone_Number")
 	private String phoneNumber;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "Tourist_id")
 	private TouristMaster tourist;
 	
@@ -42,7 +42,7 @@ public class TouristContact {
 	}
 	@Override
 	public String toString() {
-		return "TouristContact [phoneNumber=" + phoneNumber + ", tourist=" + tourist + "]";
+		return "TouristContact [phoneNumber=" + phoneNumber + ", tourist=" + tourist.getId() + "]";
 	}
 	
 	

@@ -21,7 +21,7 @@ public class TouristManagementSystemApplication {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(TouristManagementSystemApplication.class, args);
 		
 //		TouristMaster tourist = new TouristMaster();
-//		tourist.setName("siva");
+//		tourist.setName("akhil");
 //		tourist.setAddress("Hyderabad");
 //		tourist.setDate("30/09/2000");
 //		tourist.setBookingAmount(1000);
@@ -33,10 +33,15 @@ public class TouristManagementSystemApplication {
 //		tourist.addPhone(contact2);
 		
 		TouristService tService = applicationContext.getBean("service",TouristService.class);
-		 Optional<TouristMaster> tourist = tService.display(1);
+		
+		 Optional<TouristMaster> tourist = tService.display(3);
 		 if(tourist.isPresent()) {
+			 TouristMaster tourist1 = tourist.get();
 			 
-			 System.out.println(tourist);
+			 tourist1.getContacts().stream()
+			                       .filter(t->!t.getPhoneNumber().equals("0"))
+			                       .forEach(System.out::println);
+			 
 		 }
 		 else {
 			 System.out.println("notfound");
