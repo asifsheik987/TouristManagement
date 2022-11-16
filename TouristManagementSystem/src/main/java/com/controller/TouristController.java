@@ -2,6 +2,7 @@ package com.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,8 @@ import com.service.TouristService;
 @RestController
 public class TouristController {
 	private static final Logger log = LoggerFactory.getLogger(TouristService.class);
+	
+	@Autowired
 	private TouristService service;
 	
 	@GetMapping("/addTourist")
@@ -31,6 +34,7 @@ public class TouristController {
 			@RequestParam("name") String name,
 			@RequestParam("address")String address,
 			@RequestParam("date")String date,
+			@RequestParam("amount")String amount,
 			@RequestParam("contact1") String contact1,
 			@RequestParam("contact2") String contact2,
 			@RequestParam("contact3") String contact3){
@@ -41,6 +45,7 @@ public class TouristController {
 		tourist.setName(name);
 		tourist.setDate(date);
 		tourist.setAddress(address);
+		tourist.setBookingAmount(Float.parseFloat(amount));
 		TouristContact contact = new TouristContact();
 		contact.setPhoneNumber(contact1);
 		tourist.addPhone(contact);
