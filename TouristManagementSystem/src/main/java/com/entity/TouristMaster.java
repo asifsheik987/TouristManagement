@@ -22,7 +22,7 @@ public class TouristMaster {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	@Column(name = "Tourist_Id")
-	private int id;
+	private Integer id;
 	@Column(name = "Tourist_Name")
 	private String name;
 	@Column(name = "Address")
@@ -30,7 +30,7 @@ public class TouristMaster {
 	@Column(name = "Tour_date")
 	private String date;
 	@Column(name="Booking_Amount")
-	private float bookingAmount;
+	private Float bookingAmount;
 	
 	@OneToMany(mappedBy = "tourist",fetch = FetchType.EAGER,cascade = CascadeType.ALL, orphanRemoval = true)
 //	@JoinColumn(name = "tourist_id")
