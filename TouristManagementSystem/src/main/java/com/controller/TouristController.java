@@ -53,12 +53,12 @@ public class TouristController {
 		TouristContact contact = new TouristContact();
 		contact.setPhoneNumber(contact1);
 		tourist.addPhone(contact);
-		if(!contact2.equals("0")) {
+		if(!contact2.isEmpty()) {
 			TouristContact contact_2 = new TouristContact();
 			contact_2.setPhoneNumber(contact2);
 			tourist.addPhone(contact_2);
 		}
-		if(!contact3.equals("0")) {
+		if(!contact3.isEmpty()) {
 			TouristContact contact_3 = new TouristContact();
 			contact_3.setPhoneNumber(contact3);
 			tourist.addPhone(contact_3);

@@ -25,32 +25,33 @@
                         <input type="number" class="form-control" id="id" placeholder="Enter Id" name="id" readonly="readonly" value="${lastId}"/>
                     </div>
                     <div class="form-group">
-                        <label class="form-control-label" for="name">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name"/>
+                        <label class="form-control-label" for="name" >Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required/>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="Address" name="address"/>
+                        <input type="text" class="form-control" id="address" placeholder="Address" name="address" required/>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="date">Date</label>
-                        <input type="text" class="form-control" id="date" placeholder="Date" name="date"/>
+                        <input type="text" class="form-control" id="date" placeholder="Date" name="date" required/>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="amount">Amount</label>
-                        <input type="text" class="form-control" id="amount" placeholder="Amount" name="amount"/>
+                        <input type="text" class="form-control" id="amount" placeholder="Amount" name="amount" required/>
                     </div>
                     <div class="form-group">
+                    
                         <label class="form-control-label" for="contact1">PhoneNumber</label>
-                        <input type="text" class="form-control" id="contact1" placeholder="contact1" name="contact1"/>
+                        <input type="text" class="form-control" id="contact1" placeholder="contact1" name="contact1" required/>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="contact2">Alternate PhoneNumber</label>
-                        <input type="text" class="form-control" id="contact2" placeholder="contact2" name="contact2" value="0"/>
+                        <input type="text" class="form-control" id="contact2" placeholder="contact2" name="contact2"/>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="contact3">Alternate PhoneNumber</label>
-                        <input type="text" class="form-control" id="contact3" placeholder="contact3" name="contact3" value="0"/>
+                        <input type="text" class="form-control" id="contact3" placeholder="contact3" name="contact3"/>
                     </div>
                     <hr/>
                     <div class="text-center">
