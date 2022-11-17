@@ -25,6 +25,9 @@ public class TouristService {
 	public Optional<TouristMaster> display(int id) {
 		return touristRepo.findById(id);
 	}
+	public int findLastId() {
+		return touristRepo.findLastId();
+	}
 	
 
 }

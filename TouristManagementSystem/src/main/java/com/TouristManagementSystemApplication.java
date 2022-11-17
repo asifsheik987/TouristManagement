@@ -18,7 +18,7 @@ import com.service.TouristService;
 public class TouristManagementSystemApplication {
 
 	public static void main(String[] args) {
-        SpringApplication.run(TouristManagementSystemApplication.class, args);
+       ConfigurableApplicationContext applicationContext =  SpringApplication.run(TouristManagementSystemApplication.class, args);
 		
 //		TouristMaster tourist = new TouristMaster();
 //		tourist.setName("akhil");
@@ -31,8 +31,9 @@ public class TouristManagementSystemApplication {
 //		contact2.setPhoneNumber("99339944");
 //		tourist.addPhone(contact1);
 //		tourist.addPhone(contact2);
-		
+//		
 //		TouristService tService = applicationContext.getBean("service",TouristService.class);
+//		System.out.println(tService.findLastId());
 //		
 //		 Optional<TouristMaster> tourist = tService.display(3);
 //		 if(tourist.isPresent()) {

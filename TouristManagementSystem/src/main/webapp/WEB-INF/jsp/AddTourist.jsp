@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ page import="java.util.Random" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,18 +11,18 @@
 <title>Tourist Service</title>
 </head>
 <body class = "container">
-<div class="display-1"> Tourist service</div>
+<div class="display-1" style="text-align:center"> Tourist service</div>
 <hr/>
 
-<div class="row">
+<div class="col d-flex justify-content-center">
     <div class="col-6">
         <div class="card">
-            <div class="card-header">Tourist Form</div>
+            <div class="card-header"><h6>Tourist Registration Form</h6></div>
             <div class="card-body">
                 <form action="addingTourist" method="post">
                     <div class="form-group">
                         <label class="form-control-label" for="id">Id</label>
-                        <input type="number" class="form-control" id="id" placeholder="Enter Id" name="id" value=<%=new Random().nextInt()+1000%>/>
+                        <input type="number" class="form-control" id="id" placeholder="Enter Id" name="id" readonly="readonly" value="${lastId}"/>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="name">Name</label>
@@ -52,7 +53,9 @@
                         <input type="text" class="form-control" id="contact3" placeholder="contact3" name="contact3" value="0"/>
                     </div>
                     <hr/>
-                    <button type="submit" class="btn btn-primary">submit</button>
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-primary" style="align:center">submit</button>
+                    </div>
                 </form>
             </div>
         </div>

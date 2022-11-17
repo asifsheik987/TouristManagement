@@ -24,13 +24,16 @@ public class TouristController {
 	
 	@GetMapping("/addTourist")
 	public ModelAndView display() {
-		System.out.println("tourist1");
+		
 		ModelAndView mv = new ModelAndView("AddTourist");
+		mv.addObject("lastId", service.findLastId()+1);
 		return mv;
 	}
+	
 	@PostMapping("/addingTourist")
 	public ModelAndView addTourist(
-			@RequestParam("id") int id,
+			
+			@RequestParam("id") Integer id,
 			@RequestParam("name") String name,
 			@RequestParam("address")String address,
 			@RequestParam("date")String date,
@@ -38,6 +41,7 @@ public class TouristController {
 			@RequestParam("contact1") String contact1,
 			@RequestParam("contact2") String contact2,
 			@RequestParam("contact3") String contact3){
+		
 		log.info("name"+name);
 		
 		TouristMaster tourist = new TouristMaster();
@@ -61,6 +65,7 @@ public class TouristController {
 		}
 		service.addData(tourist);
 		ModelAndView mv1 = new ModelAndView("TouristView");
+		mv1.addObject("tourist",tourist);
 		
 		return mv1;
 	}
