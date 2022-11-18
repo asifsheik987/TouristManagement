@@ -25,8 +25,16 @@ public class TouristController {
 	@GetMapping("/addTourist")
 	public ModelAndView display() {
 		
+		Integer id;
+		
 		ModelAndView mv = new ModelAndView("AddTourist");
-		mv.addObject("lastId", service.findLastId()+1);
+		if(service.findLastId()==null) {
+			id = 1;
+		}
+		else {
+			id = service.findLastId()+1;
+		}
+		mv.addObject("lastId",id);
 		return mv;
 	}
 	
@@ -42,28 +50,27 @@ public class TouristController {
 			@RequestParam("contact2") String contact2,
 			@RequestParam("contact3") String contact3){
 		
-		log.info("name"+name);
-		
-		TouristMaster tourist = new TouristMaster();
-		tourist.setId(id);
-		tourist.setName(name);
-		tourist.setDate(date);
-		tourist.setAddress(address);
-		tourist.setBookingAmount(Float.parseFloat(amount));
+		TouristMaster tourist = new TouristMaster(id,name,address,date,Float.parseFloat(amount));
+
 		TouristContact contact = new TouristContact();
+		
 		contact.setPhoneNumber(contact1);
 		tourist.addPhone(contact);
+		
 		if(!contact2.isEmpty()) {
 			TouristContact contact_2 = new TouristContact();
 			contact_2.setPhoneNumber(contact2);
 			tourist.addPhone(contact_2);
 		}
+		
 		if(!contact3.isEmpty()) {
 			TouristContact contact_3 = new TouristContact();
 			contact_3.setPhoneNumber(contact3);
 			tourist.addPhone(contact_3);
 		}
+		
 		service.addData(tourist);
+		
 		ModelAndView mv1 = new ModelAndView("TouristView");
 		mv1.addObject("tourist",tourist);
 		

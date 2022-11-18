@@ -14,37 +14,41 @@ public class TouristContact {
 	@Id
 	@Column(name = "Phone_Number")
 	private String phoneNumber;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "Tourist_id")
 	private TouristMaster tourist;
-	
+
 	public TouristContact() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public TouristContact(String phoneNumber, TouristMaster tourist) {
 		super();
 		this.phoneNumber = phoneNumber;
 		this.tourist = tourist;
 	}
+
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
 	public TouristMaster getTourist() {
 		return tourist;
 	}
+
 	public void setTourist(TouristMaster tourist) {
 		this.tourist = tourist;
 	}
+
 	@Override
 	public String toString() {
 		return "TouristContact [phoneNumber=" + phoneNumber + ", tourist=" + tourist.getId() + "]";
 	}
-	
-	
 
 }

@@ -18,16 +18,17 @@ public class TouristService {
 		this.touristRepo = touristRepo;
 
 	}
-	
+
 	public void addData(TouristMaster tourist) {
 		touristRepo.save(tourist);
 	}
-	public Optional<TouristMaster> display(int id) {
+
+	public Optional<TouristMaster> display(Integer id) {
 		return touristRepo.findById(id);
 	}
-	public int findLastId() {
+
+	public Integer findLastId() {
 		return touristRepo.findLastId();
 	}
-	
 
 }
