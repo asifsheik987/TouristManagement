@@ -27,8 +27,16 @@ public class TouristServiceImpl implements TouristService{
 		return touristRepo.findById(id);
 	}
     @Override
-	public Integer findLastId() {
-		return touristRepo.findLastId();
+	public Integer findLatestId() {
+    	Integer id;
+		if(touristRepo.findLastId()==null) {
+			id=1;
+		}
+		else {
+			id=touristRepo.findLastId()+1;
+		}
+		return id;
+		
 	}
 
 }

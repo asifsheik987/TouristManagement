@@ -10,6 +10,6 @@ public interface TouristService {
 	
 	public Optional<TouristMaster> display(Integer id);
 	
-	public Integer findLastId();
+	public Integer findLatestId();
 
 }

@@ -25,16 +25,9 @@ public class TouristController {
 	@GetMapping("/addTourist")
 	public ModelAndView display() {
 		
-		Integer id;
-		
 		ModelAndView mv = new ModelAndView("AddTourist");
-		if(service.findLastId()==null) {
-			id = 1;
-		}
-		else {
-			id = service.findLastId()+1;
-		}
-		mv.addObject("lastId",id);
+		mv.addObject("lastId",service.findLatestId());
+		
 		return mv;
 	}
 	
