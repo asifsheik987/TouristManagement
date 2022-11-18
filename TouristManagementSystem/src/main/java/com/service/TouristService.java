@@ -2,33 +2,14 @@ package com.service;
 
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.entity.TouristContact;
 import com.entity.TouristMaster;
-import com.repository.TouristRepository;
 
-@Service("service")
-public class TouristService {
-	private TouristRepository touristRepo;
-
-	@Autowired
-	public TouristService(TouristRepository touristRepo) {
-		this.touristRepo = touristRepo;
-
-	}
-
-	public void addData(TouristMaster tourist) {
-		touristRepo.save(tourist);
-	}
-
-	public Optional<TouristMaster> display(Integer id) {
-		return touristRepo.findById(id);
-	}
-
-	public Integer findLastId() {
-		return touristRepo.findLastId();
-	}
+public interface TouristService {
+	
+	public void addData(TouristMaster tourist);
+	
+	public Optional<TouristMaster> display(Integer id);
+	
+	public Integer findLastId();
 
 }

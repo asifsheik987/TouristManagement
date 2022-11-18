@@ -17,7 +17,7 @@ import com.service.TouristService;
 
 @RestController
 public class TouristController {
-	private static final Logger log = LoggerFactory.getLogger(TouristService.class);
+	//private static final Logger log = LoggerFactory.getLogger(TouristService.class);
 	
 	@Autowired
 	private TouristService service;
